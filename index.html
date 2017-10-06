@@ -2,17 +2,193 @@
 <html>
 
 <head>
+    
     <title></title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous">
+        </script>
+    
+        <link   rel="stylesheet" 
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+                integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+                crossorigin="anonymous">
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous">
+        </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+        </script>
+
+        <script src="formValidate.js">
+        </script>
+
 </head>
 
 <body>
+
+    <div class="container-fluid" 
+         style="margin-top: 20px" 
+         ng-app="appValidateForm" 
+         ng-controller="ctrlForm">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading" 
+                 style="font-size: 20px;">
+                
+                <center>
+                    <b>Cadastrar usuário</b>
+                </center>
+                
+            </div>
+
+            <div class="panel-body">
+
+                <form name="formValidate" 
+                      action="#">
+
+                    <div class="form-group">
+                        <label for="name">
+                               Nome*: 
+                        </label>
+                        <input ng-focus="name_focus=true" 
+                               ng-model="name" 
+                               type="text" 
+                               id="name" 
+                               name="name" 
+                               class="form-control" 
+                               placeholder="Informe o nome"
+                               required />
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.name.$error.required && name_focus && formValidate.name.$dirty">
+                               O nome é obrigatório!
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                               Email*: 
+                        </label>
+                        <input ng-focus="email_focus=true" 
+                               ng-model="email" 
+                               type="email" 
+                               id="email" 
+                               name="email" 
+                               class="form-control" 
+                               placeholder="Informe o email"
+                               required />
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.email.$error.required && email_focus && formValidate.email.$dirty">
+                               O email é obrigatório!
+                        </div>
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.email.$error.email && email_focus && formValidate.email.$dirty">
+                               O email digitado é invalido!
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth">
+                               Nascimento*: 
+                        </label>
+                        <input ng-focus="birth_focus=true" 
+                               ng-model="birth" 
+                               type="date" 
+                               id="birth" 
+                               name="birth" 
+                               class="form-control" 
+                               placeholder="Informe a data de nascimento"
+                               required />
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.birth.$error.required && birth_focus && formValidate.birth.$dirty">
+                               A data de nascimeto é obrigatório!
+                        </div>
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.birth.$error.date && birth_focus && formValidate.birth.$dirty">
+                               O data de nascimento é invalido!
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login">
+                               Login*: 
+                        </label>
+                        <input ng-focus="login_focus=true" 
+                               ng-model="login" 
+                               type="text" 
+                               id="login" 
+                               name="login" 
+                               class="form-control" 
+                               placeholder="Informe o login"
+                               required />
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.login.$error.required && login_focus && formValidate.login.$dirty">
+                               O login é obrigatório!
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">
+                               Senha (Somente números - 5 a 10 digitos): 
+                        </label>
+                        <input ng-pattern="/^[0-9]{5,10}$/" 
+                               ng-focus="password_focus=true" 
+                               ng-model="password" 
+                               type="password" 
+                               id="password" 
+                               name="password"
+                               class="form-control" 
+                               placeholder="Informe a senha" 
+                               required />
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.password.$error.required && password_focus && formValidate.password.$dirty">
+                               A senha é obrigatório!
+                        </div>
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.password.$error.pattern && !formValidate.password.$error.required && password_focus && formValidate.password.$dirty">
+                               A senha é invalida!
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="repeat_password">
+                               Repetir senha*: 
+                        </label>
+                        <input ng-focus="repeatpassword_focus=true" 
+                               ng-model="repeat_password" 
+                               type="password" 
+                               id="repeat_password" 
+                               name="repeat_password"
+                               class="form-control" 
+                               placeholder="Repita a senha" 
+                               required 
+                               repeatpassword />
+                        <div   class="alert alert-danger fade in col-sm-12" 
+                               ng-show="formValidate.repeat_password.$error.repeatpassword">
+                               As senhas não são iguais!
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" 
+                                class="btn btn-default" 
+                                ng-disabled="formValidate.$invalid">
+                                Cadastrar
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>
