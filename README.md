@@ -19,12 +19,12 @@ Obs.: O preenchimento é obrigatório em todos os campo
 
 #### Formulário padrão ####
 
-![alt text](https://github.com/leodevel/spring-tutorial-java-web/blob/master/img/form.png "Formulário padrão")
+![alt text](https://github.com/leodevel/angularjs-validate-form/blob/master/img/form.png "Formulário padrão")
 
 #### Formulário com alguns erros de preenchimento ####
 
-![alt text](https://github.com/leodevel/spring-tutorial-java-web/blob/master/img/form-error.png "Formulário com alguns erros de preenchimento")
+![alt text](https://github.com/leodevel/angularjs-validate-form/blob/master/img/form-error.png "Formulário com alguns erros de preenchimento")
 
 #### Formulário preenchido sem erros - Botão 'Cadastrar' é habilitado  ####
 
-![alt text](https://github.com/leodevel/spring-tutorial-java-web/blob/master/img/form-no-error.png "Formulário preenchido sem erros - Botão 'Cadastrar' é habilitado")
+![alt text](https://github.com/leodevel/angularjs-validate-form/blob/master/img/form-no-error.png "Formulário preenchido sem erros - Botão 'Cadastrar' é habilitado")
