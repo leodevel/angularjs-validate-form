@@ -23,7 +23,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
         </script>
 
-        <script src="formValidate.js">
+        <script src="js/formValidate.js">
         </script>
 
 </head>
@@ -83,11 +83,11 @@
                                required />
                         <div   class="alert alert-danger fade in col-sm-12" 
                                ng-show="formValidate.email.$error.required && email_focus && formValidate.email.$dirty">
-                               O email é obrigatório!
+                               O e-mail é obrigatório!
                         </div>
                         <div   class="alert alert-danger fade in col-sm-12" 
                                ng-show="formValidate.email.$error.email && email_focus && formValidate.email.$dirty">
-                               O email digitado é invalido!
+                               O e-mail digitado é inválido!
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@
                         </div>
                         <div   class="alert alert-danger fade in col-sm-12" 
                                ng-show="formValidate.birth.$error.date && birth_focus && formValidate.birth.$dirty">
-                               O data de nascimento é invalido!
+                               A data de nascimento é inválido!
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@
 
                     <div class="form-group">
                         <label for="password">
-                               Senha (Somente números - 5 a 10 digitos): 
+                               Senha (Somente números - 5 a 10 dígitos): 
                         </label>
                         <input ng-pattern="/^[0-9]{5,10}$/" 
                                ng-focus="password_focus=true" 
@@ -146,11 +146,11 @@
                                required />
                         <div   class="alert alert-danger fade in col-sm-12" 
                                ng-show="formValidate.password.$error.required && password_focus && formValidate.password.$dirty">
-                               A senha é obrigatório!
+                               A senha é obrigatória!
                         </div>
                         <div   class="alert alert-danger fade in col-sm-12" 
                                ng-show="formValidate.password.$error.pattern && !formValidate.password.$error.required && password_focus && formValidate.password.$dirty">
-                               A senha é invalida!
+                               A senha é inválida!
                         </div>
                     </div>
 
