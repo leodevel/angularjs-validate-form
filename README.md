@@ -9,7 +9,7 @@ Este exemplo mostra o código fonte utilizado para validar um formulário de cad
 * Senha
 * Repetir senha
 
-Obs.: O preenchimento é obrigatório em todos os campo
+Obs.: O preenchimento é obrigatório em todos os campos
 
 ## Framework auxiliar ##
 
